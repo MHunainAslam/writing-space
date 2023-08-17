@@ -1,0 +1,13 @@
+.li-style ol li{
+    list-style: auto !important;
+}
+.new-content ol li ol{
+ padding-left: 25px;
+}
+h2{
+    text-align: left;
+    padding-inline: 0;
+}
+.li-style li{
+    list-style: auto;
+}

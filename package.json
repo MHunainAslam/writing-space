@@ -1,0 +1,82 @@
+{
+  "name": "mediachapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@hookform/resolvers": "^2.9.10",
+    "@mui/material": "^5.11.2",
+    "@paypal/react-paypal-js": "^7.8.2",
+    "@react-oauth/google": "^0.6.0",
+    "@reduxjs/toolkit": "^1.9.2",
+    "antd": "^5.0.7",
+    "axios": "^1.3.3",
+    "concurrently": "^7.6.0",
+    "crypto-js": "^4.1.1",
+    "draft-convert": "^2.1.13",
+    "draft-js": "^0.11.7",
+    "express": "^4.18.2",
+    "file-saver": "^2.0.5",
+    "framer-motion": "^8.0.2",
+    "html2canvas": "^1.4.1",
+    "immutable": "^4.2.1",
+    "jquery": "^3.6.2",
+    "jspdf": "^2.5.1",
+    "jwt-decode": "^3.1.2",
+    "multer": "^1.4.5-lts.1",
+    "pure-react-carousel": "^1.30.1",
+    "pusher-js": "^8.0.0",
+    "react": "^18.2.0",
+    "react-circular-progressbar": "^2.1.0",
+    "react-data-table-component": "^7.5.3",
+    "react-dom": "^18.2.0",
+    "react-draft-wysiwyg": "^1.15.0",
+    "react-hook-form": "^7.41.0",
+    "react-hot-toast": "^2.4.0",
+    "react-mixitup": "^4.0.6",
+    "react-redux": "^8.0.5",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.5.0",
+    "react-scripts": "^5.0.1",
+    "react-slick": "^0.29.0",
+    "react-social-login-buttons": "^3.6.1",
+    "react-to-print": "^2.14.10",
+    "react-toastify": "^9.1.1",
+    "reactjs-social-login": "^2.6.1",
+    "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
+    "slick-carousel": "^1.8.1",
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "concurrently \"react-scripts start\" ",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"npm run start\" \"node ./index.js\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-autocomplete": "^1.8.6",
+    "webpack": "^5.75.0"
+  }
+}
