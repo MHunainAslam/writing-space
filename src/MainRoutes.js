@@ -27,6 +27,7 @@ import ViewSubscription from './Component/ViewSubscription';
 import CustomOrder from './Component/Dashboard/CustomOrder';
 import Cookiepolicy from './Component/Cookiepolicy';
 import Copyright from './Component/Copyright';
+import Allservice from './Component/Allservice';
 
 
 export const MainRoutes = () => {
@@ -136,6 +137,7 @@ export const MainRoutes = () => {
                     <Route path="/terms-and-conditions" element={<TermsNConditions />} exact />
                     <Route path="/cookiepolicy" element={<Cookiepolicy />} exact />
                     <Route path="/copyright" element={<Copyright />} exact />
+                    <Route path="/allservices" element={<Allservice />} exact />
                     <Route element={<PrivateRoutes />}>
                         <Route path="/checkout/:item" element={<Checkout />} exact />
                         <Route path="/my-account" element={<MyAccount />} exact />

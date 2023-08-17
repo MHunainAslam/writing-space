@@ -26,7 +26,7 @@ export const Home = () => {
 
     useEffect(() => {
         setTitle(`Home${APP_NAME}`);
-        fetch(`https://eliteblue.net/research-space/api/webs/subscription`)
+        fetch(`https://eliteblue.net/research-space/api/webs/subscription?paginate=3`)
             .then((response) => response.json())
             .then((actualData) => { setData(actualData.data); setIsLoading(false); setImg(actualData.image_path); })
             .catch((err) => {
@@ -259,62 +259,68 @@ export const Home = () => {
                                         :
                                         data.map((item) => {
                                             return <div className="col-lg-4 col-md-6 col-12 my-3" key={item.id}>
-                                                 <Link to={`/view-subscription/${item.slug}`} >
-                                                                       
-                                                <div class="product-card h-100 rounded-1">
-                                                    <div className="d-flex">
-                                                        <div class="product-tumb col-4">
-                                                            <img src={`${img}/${item.image}`} alt="" />
-                                                        </div>
-                                                        <div class="product-details col-8">
-                                                            <h6><a href="">{item.title}</a></h6>
-                                                            <p className='service-card-desc-home' dangerouslySetInnerHTML={{ __html: item.description }}></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-bottom-details">
-                                                        {item.permission === 'inquire' &&
-                                                            <div className='mb-3'>
-                                                                <Alert message="Our limit is exceed!" type="info" />
+                                                <Link to={`/view-subscription/${item.slug}`} >
+
+                                                    <div class="product-card h-100 rounded-1">
+                                                        <div className="d-flex">
+                                                            <div class="product-tumb col-4">
+                                                                <img src={`${img}/${item.image}`} alt="" />
                                                             </div>
-                                                        }
-                                                        <div className='align-items-center justify-content-between'>
-
-                                                            <div class="product-price text-center">
-                                                                {/* {item.compare_price_per_page && */}
-
-                                                                <strike className="fs-sm">
-                                                                    ${item.permission === `writing-service` ? parseInt(item.compare_price_per_page) * parseInt(item.minimum_pages_allowed) : item.compare_price}&nbsp;&nbsp;
-                                                                </strike>
-
-                                                                {/* } */}
-                                                                $<span className='pe-4'>{item.permission === `writing-service` ? parseInt(item.actual_price_per_page) * parseInt(item.minimum_pages_allowed) : item.compare_price}</span>
-                                                                /{item.subscription_duration} Months
+                                                            <div class="product-details col-8">
+                                                                <h6><a href="">{item.title}</a></h6>
+                                                                <p className='service-card-desc-home' dangerouslySetInnerHTML={{ __html: item.description }}></p>
                                                             </div>
-                                                            <div class="product-links w-100 text-center my-3">
-                                                                {
-                                                                    item?.permission != 'inquire'
-                                                                        ?
-                                                                        <Link className="py-2 btn btn-main" to={`/view-subscription/${item.slug}`} >
-                                                                            Buy Now
-                                                                        </Link>
-                                                                        :
-                                                                        <Tooltip placement="top" title={"Inquire Now"}>
-                                                                            <button className="py-2 btn btn-main type-light text-white" onClick={() => showModal(item.id)}>
-                                                                                Notify Me
-                                                                            </button>
-                                                                        </Tooltip>
-                                                                }
-                                                                {/* <button className="py-2 btn btn-main" onClick={() => addToCart(item)} >
+                                                        </div>
+                                                        <div class="product-bottom-details">
+                                                            {item.permission === 'inquire' &&
+                                                                <div className='mb-3'>
+                                                                    <Alert message="Our limit is exceed!" type="info" />
+                                                                </div>
+                                                            }
+                                                            <div className='align-items-center justify-content-between'>
+
+                                                                <div class="product-price text-center">
+                                                                    {/* {item.compare_price_per_page && */}
+
+                                                                    <strike className="fs-sm">
+                                                                        ${item.permission === `writing-service` ? parseInt(item.compare_price_per_page) * parseInt(item.minimum_pages_allowed) : item.compare_price}&nbsp;&nbsp;
+                                                                    </strike>
+
+                                                                    {/* } */}
+                                                                    $<span className='pe-4'>{item.permission === `writing-service` ? parseInt(item.actual_price_per_page) * parseInt(item.minimum_pages_allowed) : item.compare_price}</span>
+                                                                    /{item.subscription_duration} Months
+                                                                </div>
+                                                                <div class="product-links w-100 text-center my-3">
+                                                                    {
+                                                                        item?.permission != 'inquire'
+                                                                            ?
+                                                                            <Link className="py-2 btn btn-main" to={`/view-subscription/${item.slug}`} >
+                                                                                Buy Now
+                                                                            </Link>
+                                                                            :
+                                                                            <Tooltip placement="top" title={"Inquire Now"}>
+                                                                                <button className="py-2 btn btn-main type-light text-white" onClick={() => showModal(item.id)}>
+                                                                                    Notify Me
+                                                                                </button>
+                                                                            </Tooltip>
+                                                                    }
+                                                                    {/* <button className="py-2 btn btn-main" onClick={() => addToCart(item)} >
                                                                         Buy Now
                                                                     </button> */}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                                 </Link>
                                             </div>
                                         })
                                 }
+
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <Link className="py-2  btn btn-main" to='/allservices' >
+                                    View All
+                                </Link>
                             </div>
                         </div>
                     </div>
